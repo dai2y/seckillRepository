@@ -17,6 +17,8 @@
       <scope>test</scope>
     </dependency>
     
+  <!--spring mvc-->
+    
   </dependencies>
   <build>
     <finalName>seckill</finalName>
