@@ -13,10 +13,10 @@ public class ContralTest {
     public void firstTest() {
         assertEquals(1, 1);
     }
-    @Test
-    public void testJDK(){
-        List<String> list = Arrays.asList("Hello", "World!");
-        list.stream().forEach(System.out::println);
-    }
+ //   @Test
+   // public void testJDK(){
+   //     List<String> list = Arrays.asList("Hello", "World!");
+      //  list.stream().forEach(System.out::println);
+   // }
 
 }
