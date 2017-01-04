@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class ContralTest {
     @Test
     public void firstTest() {
+	
         assertEquals(1, 1);
     }
  //   @Test
