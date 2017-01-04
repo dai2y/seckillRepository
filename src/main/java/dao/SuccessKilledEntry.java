@@ -15,6 +15,8 @@ public class SuccessKilledEntry {
 
     private Date createTime;
 
+    private SecKillEntry secKillEntry;
+
     public Long getSeckillId() {
         return seckillId;
     }
@@ -47,6 +49,14 @@ public class SuccessKilledEntry {
         this.createTime = createTime;
     }
 
+    public SecKillEntry getSecKillEntry() {
+        return secKillEntry;
+    }
+
+    public void setSecKillEntry(SecKillEntry secKillEntry) {
+        this.secKillEntry = secKillEntry;
+    }
+
     @Override
     public String toString() {
         return "SuccessKilledEntry{" +
@@ -54,6 +64,7 @@ public class SuccessKilledEntry {
                 ", userPhone=" + userPhone +
                 ", state=" + state +
                 ", createTime=" + createTime +
+                ", secKillEntry=" + secKillEntry +
                 '}';
     }
 }
