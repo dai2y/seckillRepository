@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userDao">
-    <insert id="insertUser" parameterType="dao.Entity.User">
-        INSERT  INTO account(userName,userStatus,userOrg,createTime,createUser) VALUES (#{userName},#{userStatus},#{userOrg},#{createTime},#{createUser})
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id" parameterType="dao.Entity.User">
+        INSERT  INTO user(
+        userName,password) VALUES (#{userName}, #{password})
     </insert>
+
+    <select id="isExsitUser" resultType="dao.Entity.User">
+        SELECT
+            id,
+            userName,
+            createTime,
+            updateTime
+        FROM
+            user
+        WHERE
+            userName = #{userName}
+    </select>
+
+    <select id="getUserById" resultType="dao.Entity.User">
+        SELECT
+            id,
+            userName,
+            createTime,
+            updateTime
+        FROM
+             user u
+        <where>
+            id = #{userId}
+        </where>
+    </select>
+
+    <select id="getUserByLogin" parameterType="dao.Entity.User" resultType="dao.Entity.User">
+        SELECT
+            id,
+            userName,
+            createTime,
+            updateTime
+        FROM
+            user u
+        <where>
+            userName = #{userName}
+          and
+            password = #{password}
+        </where>
+    </select>
+
 </mapper>

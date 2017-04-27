@@ -9,18 +9,17 @@ public class User {
     /**
      * 用户id
      */
-     private Long userId;
+     private Long id;
+
+    /**
+     * 密码
+     */
+    private String password;
+
     /**
      * 账户
      */
     private String userName;
-
-    private String userOrg;
-
-    /**
-     * 用户等级
-     */
-    private String userStatus;
 
     /**
      * 记录创建时间
@@ -30,14 +29,22 @@ public class User {
     /**
      * 记录创建人
      */
-    private String createUser;
+    private Date updateTime;
 
-    public Long getUserId() {
-        return userId;
+    public Long getId() {
+        return id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getUserName() {
@@ -56,47 +63,22 @@ public class User {
         this.createTime = createTime;
     }
 
-    public String getUserOrg() {
-        return userOrg;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUserOrg(String userOrg) {
-        this.userOrg = userOrg;
-    }
-
-    public String getUserStatus() {
-        return userStatus;
-    }
-
-    public void setUserStatus(String userStatus) {
-        this.userStatus = userStatus;
-    }
-
-    public Date getCreeteTime() {
-        return createTime;
-    }
-
-    public void setCreeteTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public String getCreateUser() {
-        return createUser;
-    }
-
-    public void setCreateUser(String createUser) {
-        this.createUser = createUser;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
+                "id=" + id +
+                ", password='" + password + '\'' +
                 ", userName='" + userName + '\'' +
-                ", userOrg='" + userOrg + '\'' +
-                ", userStatus='" + userStatus + '\'' +
                 ", createTime=" + createTime +
-                ", createUser='" + createUser + '\'' +
+                ", updateTime='" + updateTime + '\'' +
                 '}';
     }
 }

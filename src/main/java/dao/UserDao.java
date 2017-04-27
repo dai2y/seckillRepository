@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import dao.Entity.User;
 
 /**
@@ -7,4 +9,10 @@ import dao.Entity.User;
  */
 public interface UserDao {
     void insertUser(User user);
+
+    List<User> isExsitUser(String userName);
+
+    User getUserById(Long userId);
+
+    User getUserByLogin(User user);
 }
